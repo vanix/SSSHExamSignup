@@ -2,7 +2,7 @@
 <?php
 	$dbhost = 'localhost';   
 	$dbuser = 'root';   
-	$dbpass = '0000';   
+	$dbpass = '1024vs8884';   
 	$dbname = 'test';
  
 	$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');;
