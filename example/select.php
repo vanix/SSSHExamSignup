@@ -1,11 +1,15 @@
-<?
-	session_start(); 
-	echo $_POST['inputName'];
-	echo $_POST['inputPassword'];
-	
+<?php
+session_start(); 
+if($_SESSION['status']==0) {
+	$_SESSION['id'] == $_POST['inputName'];
+	$_SESSION['pw'] == $_POST['inputPassword'];
+	include("mysql_conn.php");
+	include("account_check.php");
+} else {
 	include("mysql_conn.php");
 	include("account_check.php");
 	echo "<a href=signout.php>登出</a>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +29,7 @@
     </div>
     <div>
 		<h1>報名結果如下</h1>
-		<? 		
+		<?php 		
 			if ($_SESSION['status']==1) {
 			
 				$sql_select = "SELECT * from test";

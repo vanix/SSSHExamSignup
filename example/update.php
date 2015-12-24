@@ -1,6 +1,15 @@
-<?
+<?php
 session_start(); 
-include("mysql_conn.php");
+if($_SESSION['status']==0) {
+	$_SESSION['id'] == $_POST['inputName'];
+	$_SESSION['pw'] == $_POST['inputPassword'];
+	include("mysql_conn.php");
+	include("account_check.php");
+} else {
+	include("mysql_conn.php");
+	include("account_check.php");
+	echo "<a href=signout.php>登出</a>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +29,7 @@ include("mysql_conn.php");
     </div>
     <div>	  
 		<form method=POST action="./update.php">
-  	        <? 
+  	        <?php
 			if($_POST['inputName'] != "") {
 				if($_POST['inputSubject1'] != "" ) $subject = $subject ."/". $_POST['inputSubject1'];
 				if($_POST['inputSubject2'] != "" ) $subject = $subject ."/". $_POST['inputSubject2'];

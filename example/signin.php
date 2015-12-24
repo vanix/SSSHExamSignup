@@ -10,7 +10,7 @@
 
       <form method="POST" action="select.php">
         <h2>請輸入學號</h2>
-        <input type="email" id="inputName" name="inputName" placeholder="請輸入帳號" required autofocus>
+        <input type="text" id="inputName" name="inputName" placeholder="請輸入帳號" required autofocus>
 		<h2 class="form-signin-heading">請輸入密碼</h2>
         <input type="password" id="inputPassword" name="inputPassword" placeholder="Password" required>
         <!-- <div>

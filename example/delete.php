@@ -1,6 +1,15 @@
-<?
+<?php
 session_start(); 
-include("mysql_conn.php");
+if($_SESSION['status']==0) {
+	$_SESSION['id'] == $_POST['inputName'];
+	$_SESSION['pw'] == $_POST['inputPassword'];
+	include("mysql_conn.php");
+	include("account_check.php");
+} else {
+	include("mysql_conn.php");
+	include("account_check.php");
+	echo "<a href=signout.php>登出</a>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +30,7 @@ include("mysql_conn.php");
     <div>	  
 	      <form method=POST action=./delete.php>
 			  <h2>報名資料如下</h2>
-    	        <?	
+    	        <?php	
 				if($_POST['inputName'] != "") {				
 		  			$sql_delete = "DELETE from test where name ='$_POST[inputName]'";
 					echo $sql_delete;
@@ -41,7 +50,7 @@ include("mysql_conn.php");
   					 $subject=$row[1]; 
     	        }
     	        ?>
-	        <input type="hidden" id="inputName" name="inputName" value=<?echo $name;?>>
+	        <input type="hidden" id="inputName" name="inputName" value=<?php echo $name;?>>
 	        <button type="submit">刪除</button>
 	      </form>
     </div> <!-- /container -->
