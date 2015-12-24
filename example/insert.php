@@ -1,15 +1,15 @@
 <?php
-	session_start(); 
-	if($_SESSION['status']==0) {
-		$_SESSION['id'] == $_POST['inputName'];
-		$_SESSION['pw'] == $_POST['inputPassword'];
-		include("mysql_conn.php");
-		include("account_check.php");
-	} else {
-		include("mysql_conn.php");
-		include("account_check.php");
-		echo "<a href=signout.php>登出</a>";
-	}
+session_start(); 
+if($_SESSION['status']==0) {
+	$_SESSION['id'] = $_POST['inputName'];
+	$_SESSION['pw'] = $_POST['inputPassword'];
+	include("mysql_conn.php");
+	include("account_check.php");
+} else {
+	include("mysql_conn.php");
+	include("account_check.php");
+	echo "<a href=signout.php>登出</a>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

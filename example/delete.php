@@ -1,8 +1,8 @@
 <?php
 session_start(); 
 if($_SESSION['status']==0) {
-	$_SESSION['id'] == $_POST['inputName'];
-	$_SESSION['pw'] == $_POST['inputPassword'];
+	$_SESSION['id'] = $_POST['inputName'];
+	$_SESSION['pw'] = $_POST['inputPassword'];
 	include("mysql_conn.php");
 	include("account_check.php");
 } else {
