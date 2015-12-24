@@ -15,6 +15,8 @@ if($_SESSION['status']==0) {
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
     <title>補考報名系統</title>
 
 	<!-- Latest compiled and minified CSS -->
