@@ -35,32 +35,9 @@ if($_SESSION['status']==0) {
   </head>
 
   <body>
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="./index.html">Index</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-			<li><a href="./select.php">查詢</a></li>
-            <li class="active"><a href="./insert.php">新增</a></li>
-            <li><a href="./update.php">修改</a></li>
-			<li><a href="./delete.php">刪除</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
+	<?php include("include/navbar.php") ?>
     <div class="container">
-
+		
 <?php
 	echo $_POST['inputName'] . "<br>";
 	if($_POST['inputSubject1'] != "" ) $subject = $subject ."/". $_POST['inputSubject1'];

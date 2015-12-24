@@ -15,6 +15,6 @@
 	} else {
 		$_SESSION['status']=0;
 		echo "帳號密碼有誤";
-		// echo "<meta http-equiv=REFRESH CONTENT=2;url=signin.php>";
+		echo "<meta http-equiv=REFRESH CONTENT=2;url=signin.php>";
 	}
 ?>
