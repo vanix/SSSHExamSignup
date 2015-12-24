@@ -37,7 +37,7 @@ if($_SESSION['status']==0) {
 
 	      <form class="form-signin" method=POST action=./delete.php>
 			  <h2 class="form-signin-heading">報名資料如下</h2>
-    	        <? 	
+    	        <?php 	
 				if($_POST['inputName'] != "") {				
 		  			$sql_delete = "DELETE from test where name ='$_POST[inputName]'";
 					echo $sql_delete;
@@ -57,7 +57,7 @@ if($_SESSION['status']==0) {
   					 $subject=$row[1]; 
     	        }
     	        ?>
-	        <input type="hidden" id="inputName" name="inputName" class="form-control" value=<?echo $name;?>>
+	        <input type="hidden" id="inputName" name="inputName" class="form-control" value=<?php echo $name;?>>
 	        <button class="btn btn-lg btn-primary btn-block" style="margin-top:50px;" type="submit">刪除</button>
 	      </form>
 

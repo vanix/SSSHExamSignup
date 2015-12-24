@@ -36,7 +36,7 @@ if($_SESSION['status']==0) {
 	<?php include("include/navbar.php") ?>
     <div class="container">	  
 	      <form class="form-signin" method=POST action="./update.php">
-  	        <?  
+  	        <?php  
 			
 			if($_POST['inputName'] != "") {
 				if($_POST['inputSubject1'] != "" ) $subject = $subject ."/". $_POST['inputSubject1'];
@@ -76,8 +76,8 @@ if($_SESSION['status']==0) {
 			}
 			echo "<input type=text name=total value=".count($output).">";
   	        ?>
-	        <h2 class="form-signin-heading">姓名: <?echo $name;?></h2>
-	        <input type="hidden" id="inputName" name="inputName" class="form-control" value=<?echo $name;?>>
+	        <h2 class="form-signin-heading">姓名: <?php echo $name;?></h2>
+	        <input type="hidden" id="inputName" name="inputName" class="form-control" value=<?php echo $name;?>>
 			
 	        <label for="inputName" class="sr-only">姓名</label>
 			

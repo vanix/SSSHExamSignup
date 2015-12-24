@@ -33,7 +33,7 @@ if($_SESSION['status']==0) {
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>報名結果如下</h1>
-		<? 
+		<?php 
 		$sql_select = "SELECT * from test";
 		echo "<br>" . $sql_select ."<br>";
 		$result = mysql_query($sql_select);
