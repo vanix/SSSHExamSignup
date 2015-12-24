@@ -29,7 +29,7 @@ if($_SESSION['status']==0) {
     </div>
     <div class="container">
 
-<?
+<?php
 	echo $_POST['inputName'] . "<br>";
 	if($_POST['inputSubject1'] != "" ) $subject = $subject ."/". $_POST['inputSubject1'];
 	if($_POST['inputSubject2'] != "" ) $subject = $subject ."/". $_POST['inputSubject2'];
