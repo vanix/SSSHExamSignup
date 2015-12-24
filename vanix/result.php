@@ -1,3 +1,16 @@
+<?php
+session_start(); 
+if($_SESSION['status']==0) {
+	$_SESSION['id'] = $_POST['inputName'];
+	$_SESSION['pw'] = $_POST['inputPassword'];
+	include("include/mysql_conn.php");
+	include("include/account_check.php");
+} else {
+	include("include/mysql_conn.php");
+	include("include/account_check.php");
+	echo "<a href=signout.php>登出</a>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,16 +73,7 @@
 	if($_POST['inputSubject8'] != "" ) $subject = $subject ."/". $_POST['inputSubject8'];
 
 	$subject = substr($subject,1);
-	echo $subject."<br>";
-	
-	$dbhost = 'localhost';   
-	$dbuser = 'root';   
-	$dbpass = '0000';   
-	$dbname = 'test';
- 
-	$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');;
-	mysql_query("SET NAMES utf8");	
-	mysql_select_db($dbname);   
+	echo $subject."<br>";  
 	
 	$sql_select = "SELECT * from test where name='$_POST[inputName]'";
 	$result = mysql_query($sql_select);
