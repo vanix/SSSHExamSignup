@@ -22,7 +22,7 @@ if($_SESSION['status']==0) {
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Custom styles for this template -->
-    <link href="navbar-fixed-top.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/navbar-fixed-top.css">
 
 	<style>
 	.form-signin {

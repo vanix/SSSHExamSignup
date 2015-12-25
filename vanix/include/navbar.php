@@ -34,7 +34,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Default</a></li>
             <li><a href="#">Static top</a></li>
-            <li class="active"><a href="#">Fixed top <span class="sr-only">(current)</span></a></li>
+            <!-- <li class="active"><a href="#">Fixed top <span class="sr-only">(current)</span></a></li> -->
           </ul>
 
         </div><!--/.nav-collapse -->

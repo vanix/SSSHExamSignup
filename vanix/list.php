@@ -1,22 +1,30 @@
 <?php
 session_start(); 
-if($_SESSION['status']==0) {
-	$_SESSION['id'] = $_POST['inputName'];
-	$_SESSION['pw'] = $_POST['inputPassword'];
-	include("include/mysql_conn.php");
-	include("include/account_check.php");
+if($_SESSION['management']==0) {
+	$_SESSION['manager_id'] = $_POST['inputName'];
+	$_SESSION['manager_pw'] = $_POST['inputPassword'];
+	include("include/mysql_conn_manage.php");
+	include("include/manager_check.php");
 } else {
-	include("include/mysql_conn.php");
-	include("include/account_check.php");
-	echo "<a href=signout.php>登出</a>";
+	include("include/mysql_conn_manage.php");
+	include("include/manager_check.php");
+	echo "<a href=signout_manager.php>登出</a>";
 }
 ?>
+
+<?php 
+$sql_select = "SELECT * from test";
+echo "<br>" . $sql_select ."<br>";
+$result = mysql_query($sql_select);
+if (!$result) die('Invalid query: ' . mysql_error());
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>補考報名系統</title>
+    <title>補考報名系統 管理介面</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -28,30 +36,26 @@ if($_SESSION['status']==0) {
   </head>
 
   <body>
-	<?php include("include/navbar.php") ?>
+	<?php include("include/navbar_manager.php") ?>
     <div class="container">
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>報名結果如下</h1>
-		<?php 
-		$sql_select = "SELECT * from test";
-		echo "<br>" . $sql_select ."<br>";
-		$result = mysql_query($sql_select);
-		if (!$result) die('Invalid query: ' . mysql_error());
-        while($row = mysql_fetch_row($result))
-        {
-                 echo "<p>" . $row[0] ." " . $row[1] . "</p>"; 
-        }
-		
-		?>
-        <p></p>
-        <p></p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="./update.php" role="button">修改資料</a>
-        </p>
-      </div>
-	  
+	  <table class="table table-striped">
+		  <tr class="success"><td>#</td><td>姓名</td><td>科目</td><td>修改</td><td>刪除</td></tr>
+		  <?php
+		  	// while($row = mysql_fetch_row($result))
+			for($i=1;$i<=mysql_num_rows($result);$i++)
+			{
+				$row = mysql_fetch_row($result)
+		  ?>
+ 
+		  <tr><td><?php echo $i ?></td><td><?php echo $row[0] ?></td><td><?php echo $row[1] ?></td>
+			  <td><button type="button" class="btn btn-primary btn-xs">修改</button></td>
+			  <td><button type="button" class="btn btn-danger btn-xs">刪除</button></td>
+		  </tr>
+
+		  <?php } ?>
+	    
+	  </table>
 
     </div> <!-- /container -->
 

@@ -1,14 +1,14 @@
 <?php
 session_start(); 
-if($_SESSION['status']==0) {
-	$_SESSION['id'] = $_POST['inputName'];
-	$_SESSION['pw'] = $_POST['inputPassword'];
-	include("include/mysql_conn.php");
-	include("include/account_check.php");
+if($_SESSION['management']==0) {
+	$_SESSION['manager_id'] = $_POST['inputName'];
+	$_SESSION['manager_pw'] = $_POST['inputPassword'];
+	include("include/mysql_conn_manage.php");
+	include("include/manager_check.php");
 } else {
-	include("include/mysql_conn.php");
-	include("include/account_check.php");
-	echo "<a href=signout.php>登出</a>";
+	include("include/mysql_conn_manage.php");
+	include("include/manager_check.php");
+	echo "<a href=signout_manager.php>登出</a>";
 }
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ if($_SESSION['status']==0) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-    <title>補考報名系統</title>
+    <title>補考報名系統 管理介面</title>
 	
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -30,7 +30,7 @@ if($_SESSION['status']==0) {
   </head>
 
   <body>
-	<?php include("include/navbar.php") ?>
+	<?php include("include/navbar_manager.php") ?>
     <div class="container">
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">

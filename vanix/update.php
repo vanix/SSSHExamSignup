@@ -16,13 +16,11 @@ if($_SESSION['status']==0) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
     <title>補考報名系統</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Custom styles for this template -->
-    <link href="navbar-fixed-top.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/navbar-fixed-top.css">
 	
 	<style>
 	.form-signin {

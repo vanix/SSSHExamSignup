@@ -6,5 +6,5 @@
 	unset($_SESSION['manager_id']);
 	unset($_SESSION['manager_pw']);
 	echo '登出中......';
-	echo '<meta http-equiv=REFRESH CONTENT=1;url=signin.php>';
+	echo '<meta http-equiv=REFRESH CONTENT=1;url=signin_manager.php>';
 ?>

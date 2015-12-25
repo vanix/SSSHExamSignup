@@ -9,15 +9,16 @@
     <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/signin.css">
-    <link rel="stylesheet" href="css/navbar-fixed-top.css">
+	<link rel="stylesheet" href="css/navbar-fixed-top.css" >
+	
   </head>
 
   <body>
 	<?php include("include/navbar_signin.php") ?>
     <div class="container">
-      <form class="form-signin" method="POST" action="info.php">
-        <h2 class="form-signin-heading">請輸入學號</h2>
-        <label for="inputID" class="sr-only">學號</label>
+      <form class="form-signin" method="POST" action="management.php">
+        <h2 class="form-signin-heading">請輸入帳號</h2>
+        <label for="inputID" class="sr-only">帳號</label>
         <input type="text" id="inputName" name="inputName" class="form-control" placeholder="請輸入學號" required autofocus>
 		<h2 class="form-signin-heading">請輸入密碼</h2>
         <label for="inputPassword" class="sr-only">密碼</label>
