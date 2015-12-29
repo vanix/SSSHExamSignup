@@ -13,7 +13,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
 			<li><a href="#">匯入學籍</a></li>
-			<li><a href="#">科目管理</a></li>
+			<li><a href="./subject.php">科目管理</a></li>
 			<li><a href="./list.php">報名清單</a></li>
 			<li><a href="#">列印報表</a></li>
 			<li><a href="#">匯出檔案</a></li>
