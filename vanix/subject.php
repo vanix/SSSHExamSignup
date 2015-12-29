@@ -183,7 +183,6 @@ if (!$result) die('Invalid query: ' . mysql_error());
 		  <tr><td><?php echo $row[0]; ?></td><td><?php echo $row[1]; ?></td><td><?php echo $row[2]; ?></td><td><?php echo $row[3]; ?></td>
 			  <td><button type="button" class="btn btn-primary btn-xs">修改</button></td>
 			  <td><button type="button" class="btn btn-danger btn-xs">刪除</button></td>
-			  <td><button type="hidden" name="stu_name" value="">刪除</button></td>
 		  </tr>
 
 		  <?php } ?>
