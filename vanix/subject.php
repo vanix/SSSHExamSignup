@@ -13,7 +13,7 @@ if($_SESSION['management']==0) {
 ?>
 
 <?php 
-$sql_select = "SELECT * from subject";
+$sql_select = "SELECT * from usersubject";
 echo "<br>" . $sql_select ."<br>";
 $result = mysql_query($sql_select);
 if (!$result) die('Invalid query: ' . mysql_error());
@@ -180,7 +180,7 @@ if (!$result) die('Invalid query: ' . mysql_error());
 				$row = mysql_fetch_row($result)
 		  ?>
  
-		  <tr><td><?php echo $i; ?></td><td><?php echo $row[0]; ?></td><td><?php echo $row[1]; ?></td><td><?php echo $row[2]; ?></td>
+		  <tr><td><?php echo $row[0]; ?></td><td><?php echo $row[1]; ?></td><td><?php echo $row[2]; ?></td><td><?php echo $row[3]; ?></td>
 			  <td><button type="button" class="btn btn-primary btn-xs">修改</button></td>
 			  <td><button type="button" class="btn btn-danger btn-xs">刪除</button></td>
 			  <td><button type="hidden" name="stu_name" value="">刪除</button></td>
